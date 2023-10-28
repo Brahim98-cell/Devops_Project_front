@@ -14,7 +14,7 @@ services:
   frontend:
     image: brahim98/devops_project_front:MyAngularimage
     ports:
-      - "8084:8084"
+      - "8084:80"
     depends_on:
       - backend
 
