@@ -8,8 +8,8 @@ services:
     volumes:
       - /etc/prometheus/prometheus.yaml:/etc/prometheus/prometheus.yaml
     command: 
-      - --config.file
-      - /etc/prometheus/prometheus.yml
+      - --config.file /etc/prometheus/prometheus.yml
+
     networks:
       - monitoring
 
