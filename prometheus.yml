@@ -12,7 +12,7 @@ scrape_configs:
     static_configs:
       - targets: ['localhost:9090']
   - job_name: 'your-app'
-    metrics_path:'/prometheus'
+    metrics_path: '/prometheus'
     static_configs:
       - targets: ['192.168.33.10:80', '192.168.33.10:8083']
   - job_name: 'node-exporter'
