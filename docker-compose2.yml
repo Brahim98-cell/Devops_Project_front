@@ -1,4 +1,5 @@
 version: '3'
+
 services:
   prometheus:
     image: prom/prometheus:latest
@@ -11,9 +12,7 @@ services:
     ports:
       - '9090:9090'
     networks:
-      - monitoring
-
-
+      - your-hyperledger-network # Reference the custom network
 
   grafana:
     image: grafana/grafana:latest
@@ -24,8 +23,8 @@ services:
       GF_SECURITY_ADMIN_USER: admin
       GF_SECURITY_ADMIN_PASSWORD: admin
     networks:
-      - monitoring
+      - your-hyperledger-network # Reference the custom network
 
 networks:
-  monitoring:
-    driver: bridge
+  your-hyperledger-network: # Define your custom network
+    external: true # Make it an external network, use the name of your Hyperledger Fabric network
