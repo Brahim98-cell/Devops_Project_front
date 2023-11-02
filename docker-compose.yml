@@ -1,18 +1,18 @@
 version: '3'
 services:
   backend:
-    image: brahim98/devops_project_back:MySpringimage
+    image: brahim98/devops_project_back:Springimage
     ports:
       - "8083:8083"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/devops
-      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/MyDB?useSSL=false
+      SPRING_DATASOURCE_USERNAME: brahim
       SPRING_DATASOURCE_PASSWORD: 123
     depends_on:
       - mysql
 
   frontend:
-    image: brahim98/devops_project_front:MyAngularimage
+    image: brahim98/devops_project_front:Angularimage
     ports:
       - "80:80"
     depends_on:
@@ -22,7 +22,8 @@ services:
     image: mysql:latest
     environment:
       MYSQL_ROOT_PASSWORD: 123
-      MYSQL_DATABASE: devops
+      MYSQL_DATABASE: MyDB
+      MYSQL_USER: brahim
       MYSQL_PASSWORD: 123
     ports:
       - "3306:3306"
