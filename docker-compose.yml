@@ -1,7 +1,7 @@
 version: '3'
 services:
   backend:
-    image: brahim98/devops_project_back:Springimage
+    image: brahim98/devops_project_back:MySpringimage
     ports:
       - "8083:8083"
     environment:
@@ -12,7 +12,7 @@ services:
       - mysql
 
   frontend:
-    image: brahim98/devops_project_front:Angularimage
+    image: brahim98/devops_project_front:MyAngularimage
     ports:
       - "80:80"
     depends_on:
