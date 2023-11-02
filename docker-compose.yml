@@ -10,6 +10,8 @@ services:
       SPRING_DATASOURCE_PASSWORD: 123
     depends_on:
       - db
+    networks:
+      - mynetwork
 
   frontend:
     image: brahim98/devops_project_front:MyAngularimage
@@ -17,6 +19,8 @@ services:
       - "80:80"
     depends_on:
       - backend
+    networks:
+      - mynetwork
 
   db:
     image: mysql:latest
@@ -27,3 +31,8 @@ services:
       MYSQL_PASSWORD: 123
     ports:
       - "3306:3306"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
