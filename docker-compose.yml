@@ -3,7 +3,7 @@ services:
   backend:
     image: brahim98/devops_project_back:MySpringimage
     ports:
-      - "8082:8082"
+      - "8081:8081"
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/devops
       SPRING_DATASOURCE_USERNAME: root
@@ -23,7 +23,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: 123
       MYSQL_DATABASE: devops
-      MYSQL_USER: root
       MYSQL_PASSWORD: 123
     ports:
       - "3306:3306"
