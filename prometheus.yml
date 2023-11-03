@@ -3,7 +3,7 @@ global:
   external_labels:
     monitor: 'my-monitor'
 
-# this is where I have simple alert rules
+# This is where you have simple alert rules
 rule_files:
   - ./alertmanager/alert.rules
 
@@ -11,10 +11,11 @@ scrape_configs:
   - job_name: 'prometheus'
     static_configs:
       - targets: ['localhost:9090']
-  - job_name: 'your-app'
-    basic_auth:
-      username: brahim  
-      password: 123
+
+  - job_name: 'all-targets'  # You can use a common job name for all targets
+    metrics_path: /metrics  # Adjust the metrics path if needed
     static_configs:
       - targets: ['192.168.33.10:80', '192.168.33.10:8082']
- 
+    basic_auth:  # You can specify basic authentication here
+      username: brahim
+      password: 123
