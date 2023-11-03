@@ -3,7 +3,7 @@ services:
   backend:
     image: brahim98/devops_project_back:MySpringimage
     ports:
-      - "8083:8083"
+      - "8082:8082"
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/MyDB?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
       SPRING_DATASOURCE_USERNAME: brahim
