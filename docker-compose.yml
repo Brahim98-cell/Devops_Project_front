@@ -24,7 +24,7 @@ services:
 
   nginx-exporter:
     image: "nginx/nginx-prometheus-exporter:latest"
-    command: ["nginx.scrape-uri=http://frontend:80/metrics"]  # Adjust this command
+    command: ["-nginx.scrape-uri=http://frontend:80/metrics"]  # Adjust this command
     ports:
       - "9113:9113"
     depends_on:
