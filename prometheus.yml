@@ -15,7 +15,5 @@ scrape_configs:
   - job_name: 'all-targets'  # You can use a common job name for all targets
     metrics_path: /metrics  # Adjust the metrics path if needed
     static_configs:
-      - targets: ['192.168.33.10:80', '192.168.33.10:8082']
-    basic_auth:  # You can specify basic authentication here
-      username: brahim
-      password: 123
+      - targets: ['192.168.33.10:9113', '192.168.33.10:8082']
+    
