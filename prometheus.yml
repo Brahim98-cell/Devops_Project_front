@@ -12,13 +12,9 @@ scrape_configs:
     static_configs:
       - targets: ['localhost:9090']
   - job_name: 'your-app'
+    basic_auth:
+      username: brahim  
+      password: 123
     static_configs:
       - targets: ['192.168.33.10:80', '192.168.33.10:8082']
-  - job_name: 'node-exporter'
-    static_configs:
-      - targets: ['node-exporter:9100']
-
-alerting:
-  alertmanagers:
-    - static_configs:
-      - targets: ['alertmanager:9093']
+ 
